@@ -2,10 +2,17 @@ import React, { Component } from "react";
 
 export class NewsItems extends Component {
   render() {
-    let { title, description, imageUrl, newsUrl } = this.props;
+    let { title, description, imageUrl, newsUrl, author, date, source } =
+      this.props;
     return (
       <div className="my-3">
-        <div className="card" style={{ width: "18rem" }}>
+        <div className="card">
+          <span
+            class="position-absolute top-0 translate-middle badge rounded-pill bg-danger"
+            style={{ left: "20%", zIndex: "1" }}
+          >
+            {source}
+          </span>
           <img
             src={
               !imageUrl
@@ -16,14 +23,21 @@ export class NewsItems extends Component {
             style={{ width: "100%", height: "200px" }}
             alt="..."
           />
-          <div className="card-body">
-            <h5 className="card-title">{title}...</h5>
+          <div className="card-body" style={{ height: "17rem" }}>
+            <h5 className="card-title">{title}... </h5>
+
             <p className="card-text" style={{ textAlign: "justify" }}>
               {!description
                 ? "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit mollitia culpa incidunt tempore"
                 : description}
               ...
             </p>
+            <p className="card-text">
+              <small className="text-muted">
+                By {author} on {date}
+              </small>
+            </p>
+
             <a
               href={newsUrl}
               target="_blank"
