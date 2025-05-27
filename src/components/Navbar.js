@@ -1,12 +1,7 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
-// import PropTypes from "prop-types";
-
 export class Navbar extends Component {
-  //   static propTypes = {};
-
   render() {
     return (
       <div>
